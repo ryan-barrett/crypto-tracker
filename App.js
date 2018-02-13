@@ -1,5 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { Provider } from "react-native";
+
+import { Store } from "./src/components";
 import { Header } from "./src/components";
 
 export default class App extends React.Component {
