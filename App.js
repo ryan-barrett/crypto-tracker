@@ -10,6 +10,7 @@ export default class App extends React.Component {
     return (
       <View>
         <Header />
+        <CryptoContainer />
       </View>
     );
   }
