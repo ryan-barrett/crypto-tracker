@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView, StyleSheet } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
 
 import FetchCoinData from "./../Actions/FetchCoinData";
@@ -42,9 +42,20 @@ class CryptoContainer extends Component {
       );
     }
 
-    return <View>{this.renderCoinCards()}</View>;
+    return (
+      <ScrollView contentContainerStyle={contentContainer}>
+        {this.renderCoinCards()}
+      </ScrollView>
+    );
   }
 }
+
+const styles = {
+  contentContainer: {
+    paddingBottom: 100,
+    paddingTop: 55
+  }
+};
 
 function mapStateToProps(state) {
   return {
