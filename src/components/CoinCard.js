@@ -2,7 +2,18 @@ import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { images } from "../Utils/CoinIcons";
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    display: "flex"
+  },
+  image: {
+    width: 40,
+    height: 40
+  },
+  bold: {
+    fontWeight: "bold"
+  }
+});
 
 const { container, image, bold } = styles;
 
