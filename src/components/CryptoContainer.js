@@ -7,16 +7,15 @@ import FetchCoinData from "./../Actions/FetchCoinData";
 import CoinCard from "./CoinCard";
 
 class CryptoContainer extends Component {
-  ComponentDidMount() {
+  componentWillMount() {
     this.props.FetchCoinData();
   }
 
   renderCoinCards() {
     const { crypto } = this.props;
-    console.log(crypto);
-    return crypto.data.map((coin, index) => (
+    return crypto.data.map(coin => (
       <CoinCard
-        key={index}
+        key={coin.name}
         coin_name={coin.name}
         symbol={coin.symbol}
         price_usd={coin.price_usd}
@@ -28,6 +27,7 @@ class CryptoContainer extends Component {
 
   render() {
     const { crypto } = this.props;
+    const { contentContainer } = styles;
 
     if (crypto.isFetching) {
       return (
